@@ -51,5 +51,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'auth/login';
 $route['dashboard/stats'] = 'dashboard/stats';
+$route['stock'] = 'stock/index';
+$route['products'] = 'products/index';
+$route['warehouses'] = 'warehouses/index';
+$route['stock/update_stock'] = 'stock/update_stock';
+$route['stock/ajax_stock_list'] = 'stock/ajax_stock_list';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

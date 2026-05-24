@@ -86,4 +86,12 @@ class Product_model extends CI_Model
         $this->db->where('id', $id);
         return $this->db->delete('products');
     }
+
+    public function get_all_products()
+    {
+        $this->db->where('is_active', 1);
+        $this->db->order_by('name', 'ASC');
+        $query = $this->db->get('products');
+        return $query->result();
+    }
 }

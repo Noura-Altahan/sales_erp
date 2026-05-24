@@ -216,8 +216,8 @@
                 <span>المنتجات</span>
             </a>
         </div>
-        <div class="menu-item <?= ($active_menu ?? '') == 'warehouses' ? 'active' : '' ?>">
-            <a href="<?= base_url('warehouses') ?>">
+        <div class="menu-item <?= ($active_menu ?? '') == 'stock' ? 'active' : '' ?>">
+            <a href="<?= base_url('stock') ?>">
                 <i class="fas fa-warehouse"></i>
                 <span>المستودعات</span>
             </a>
