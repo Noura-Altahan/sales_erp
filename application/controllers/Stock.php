@@ -63,7 +63,6 @@ class Stock extends CI_Controller
             $quantity = $this->input->post('quantity');
             $operation = $this->input->post('operation'); // 'add' or 'subtract'
 
-            // التحقق من الصلاحية: مستخدم عادي يرى فقط مستودعه
             if ($this->session->userdata('role') != 'admin') {
                 if ($warehouse_id != $this->session->userdata('warehouse_id')) {
                     echo json_encode(['success' => false, 'message' => 'ليس لديك صلاحية لهذا المستودع']);

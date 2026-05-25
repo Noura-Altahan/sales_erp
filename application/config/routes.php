@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -56,5 +56,14 @@ $route['products'] = 'products/index';
 $route['warehouses'] = 'warehouses/index';
 $route['stock/update_stock'] = 'stock/update_stock';
 $route['stock/ajax_stock_list'] = 'stock/ajax_stock_list';
+$route['invoices/create'] = 'invoices/create';
+$route['invoices/search_products'] = 'invoices/search_products';
+$route['invoices/save_invoice'] = 'invoices/save_invoice';
+$route['invoices'] = 'invoices/index';
+$route['invoices'] = 'invoices/index';
+$route['invoices/view/(:num)'] = 'invoices/view/$1';
+$route['invoices/delete/(:num)'] = 'invoices/delete/$1';
+$route['reports/low_stock'] = 'reports/low_stock';
+$route['reports/export_csv'] = 'reports/export_csv';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
