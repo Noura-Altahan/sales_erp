@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2026 at 03:46 PM
+-- Generation Time: May 25, 2026 at 03:57 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -102,7 +102,8 @@ CREATE TABLE `invoices` (
 --
 
 INSERT INTO `invoices` (`id`, `invoice_no`, `customer_id`, `warehouse_id`, `date`, `subtotal`, `discount_percent`, `discount_amount`, `tax_percent`, `tax_amount`, `total`, `notes`, `created_by`, `status`, `created_at`) VALUES
-(1, 'INV-2025-001', 2, 1, '2026-05-24 16:43:40', 2498.00, 10, 249.80, 0, 0.00, 2248.20, NULL, 1, 'completed', '2026-05-24 16:43:40');
+(1, 'INV-2025-001', 2, 1, '2026-05-24 16:43:40', 2498.00, 10, 249.80, 0, 0.00, 2248.20, NULL, 1, 'completed', '2026-05-24 16:43:40'),
+(2, 'INV-20260525-0002', 4, 1, '2026-05-25 14:53:15', 100.00, 10, 10.00, 0, 0.00, 90.00, NULL, 1, 'completed', '2026-05-25 15:53:15');
 
 -- --------------------------------------------------------
 
@@ -127,7 +128,8 @@ CREATE TABLE `invoice_items` (
 INSERT INTO `invoice_items` (`id`, `invoice_id`, `product_id`, `quantity`, `price`, `discount`, `total`) VALUES
 (1, 1, 1, 1, 1999.00, 0.00, 1999.00),
 (2, 1, 2, 1, 299.00, 0.00, 299.00),
-(3, 1, 7, 8, 25.00, 0.00, 200.00);
+(3, 1, 7, 8, 25.00, 0.00, 200.00),
+(4, 2, 7, 4, 25.00, 0.00, 100.00);
 
 -- --------------------------------------------------------
 
@@ -154,7 +156,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `code`, `name`, `description`, `category_id`, `price`, `cost`, `alert_quantity`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'P001', 'هاتف ذكي - موديل X', NULL, 1, 1999.00, 1700.00, 5, 1, '2026-05-24 16:43:39', NULL),
+(1, 'P001', 'هاتف ذكي - موديل جديد', '', 1, 1999.00, 1700.00, 6, 1, '2026-05-24 16:43:39', '2026-05-24 20:23:15'),
 (2, 'P002', 'سماعات لاسلكية', NULL, 1, 299.00, 200.00, 10, 1, '2026-05-24 16:43:39', NULL),
 (3, 'P003', 'كرسي مكتب مريح', NULL, 2, 599.00, 450.00, 3, 1, '2026-05-24 16:43:39', NULL),
 (4, 'P004', 'طقم جلسات صالون', NULL, 2, 2499.00, 2000.00, 2, 1, '2026-05-24 16:43:39', NULL),
@@ -201,10 +203,10 @@ INSERT INTO `product_warehouse` (`id`, `product_id`, `warehouse_id`, `quantity`,
 (16, 6, 1, 40, 0, '2026-05-24 16:43:39'),
 (17, 6, 2, 20, 0, '2026-05-24 16:43:39'),
 (18, 6, 3, 10, 0, '2026-05-24 16:43:39'),
-(19, 7, 1, 192, 0, '2026-05-24 16:43:40'),
+(19, 7, 1, 188, 0, '2026-05-25 15:53:15'),
 (20, 7, 2, 100, 0, '2026-05-24 16:43:39'),
 (21, 7, 3, 50, 0, '2026-05-24 16:43:39'),
-(22, 8, 1, 60, 0, '2026-05-24 16:43:39'),
+(22, 8, 1, 300, 0, '2026-05-24 22:45:33'),
 (23, 8, 2, 25, 0, '2026-05-24 16:43:39'),
 (24, 8, 3, 15, 0, '2026-05-24 16:43:39');
 
@@ -262,10 +264,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `warehouse_id`, `full_name`, `is_active`, `remember_token`, `created_at`, `last_login`) VALUES
-(1, 'admin', 'admin@erp.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', NULL, 'مدير النظام', 1, NULL, '2026-05-24 16:43:40', NULL),
-(2, 'warehouse1', 'user1@erp.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'user_warehouse', 1, 'مسؤول مستودع الرياض', 1, NULL, '2026-05-24 16:43:40', NULL),
+(1, 'admin', 'admin@erp.com', '$2y$10$JfBy0BsvIYsJi2RiNREbjuBGSK26N0eh8Xx2NQsIqhw3newWfTcd6', 'admin', NULL, 'مدير النظام', 1, NULL, '2026-05-24 16:43:40', NULL),
+(2, 'warehouse1', 'user1@erp.com', '$2y$10$JfBy0BsvIYsJi2RiNREbjuBGSK26N0eh8Xx2NQsIqhw3newWfTcd6', 'user_warehouse', 1, 'مسؤول مستودع الرياض', 1, NULL, '2026-05-24 16:43:40', NULL),
 (3, 'warehouse2', 'user2@erp.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'user_warehouse', 2, 'مسؤول مستودع جدة', 1, NULL, '2026-05-24 16:43:40', NULL),
-(4, 'warehouse3', 'user3@erp.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'user_warehouse', 3, 'مسؤول مستودع تبوك', 1, NULL, '2026-05-24 16:43:40', NULL);
+(4, 'warehouse3', 'user3@erp.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'user_warehouse', 3, 'مسؤول مستودع تبوك', 1, NULL, '2026-05-24 16:43:40', NULL),
+(5, 'test', 'test@test.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', NULL, NULL, 1, NULL, '2026-05-24 17:26:24', NULL);
 
 -- --------------------------------------------------------
 
@@ -392,13 +395,13 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `invoices`
 --
 ALTER TABLE `invoices`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `invoice_items`
 --
 ALTER TABLE `invoice_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -422,7 +425,7 @@ ALTER TABLE `stock_movements`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `warehouses`
