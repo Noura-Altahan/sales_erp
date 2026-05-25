@@ -46,7 +46,6 @@ class Stock extends CI_Controller
         $product_id = $this->input->get('product_id');
         $warehouse_id = $this->input->get('warehouse_id');
 
-        // تصفية حسب صلاحية المستخدم
         if ($this->session->userdata('role') != 'admin') {
             $warehouse_id = $this->session->userdata('warehouse_id');
         }

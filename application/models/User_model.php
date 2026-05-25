@@ -9,7 +9,6 @@ class User_model extends CI_Model {
     }
 
     public function login($username, $password) {
-        // بحث بالمستخدم أو البريد الإلكتروني
         $this->db->where('username', $username);
         $this->db->or_where('email', $username);
         $query = $this->db->get('users');

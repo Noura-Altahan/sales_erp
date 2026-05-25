@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?? 'ERP Mini - نظام المبيعات والمخزون' ?></title>
+    <title><?= $title ?? 'Mini ERP Stock - نظام المبيعات والمخزون' ?></title>
     
     <!-- Bootstrap 5 RTL -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
@@ -200,7 +200,7 @@
 <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
         <i class="fas fa-box" style="font-size: 2rem; color: white; margin-bottom: 10px;"></i>
-        <h3>ERP Mini</h3>
+        <h3>Mini ERP Stock</h3>
         <p>نظام المبيعات والمخزون</p>
     </div>
     <div class="sidebar-menu">
